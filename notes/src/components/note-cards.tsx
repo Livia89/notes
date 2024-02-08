@@ -42,9 +42,9 @@ export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
             onClick={() => onNoteDeleted(note.id)}
             className="w-full font-medium bg-slate-800 py-4 text-center text-sm text-slate-300 outline-none group"
           >
-            Deseja{" "}
+            Would you like to{" "}
             <span className="text-red-400 group-hover:underline">
-              apagar essa nota?
+              delete this note?
             </span>
           </button>
         </Dialog.Content>
