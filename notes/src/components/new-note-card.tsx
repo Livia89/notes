@@ -49,7 +49,6 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 
     speechRecognition = new SpeechRecognitionAPI();
 
-    speechRecognition.lang = "en-US";
     speechRecognition.continuous = true; // não para de gravar enquanto não por stop
     speechRecognition.maxAlternatives = 1; // devolve uma tentativa caso não entenda a palavra
     speechRecognition.interimResults = true; // vai trazendo os resultados em runtime
