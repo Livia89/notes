@@ -35,7 +35,6 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 	function handleStartRecording() {
 		const isSpeechRecognitionAPIAvailable =
 			'SpeechRecognition' in window || 'webkitSpeechRecognition' in window;
-
 		if (!isSpeechRecognitionAPIAvailable) {
 			alert('Not available API on browser');
 			return;
@@ -46,7 +45,6 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 
 		const SpeechRecognitionAPI =
 			window.SpeechRecognition || window.webkitSpeechRecognition;
-
 		speechRecognition = new SpeechRecognitionAPI();
 
 		speechRecognition.continuous = true; // não para de gravar enquanto não por stop
@@ -59,8 +57,9 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 			}, ''); // o text é a '' no inicio do loop. O result é o valor iterado que concatena em text
 			setContent(transcription);
 		};
+
 		speechRecognition.onerror = event => {
-			console.error(event);
+			console.error(`Speech recognition error detected: ${event.error}`);
 		};
 
 		speechRecognition.start();
