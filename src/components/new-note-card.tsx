@@ -81,7 +81,10 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 					<Dialog.Close className="absolute right-0 top-0 bg-slate-800 p-1.5 text-slate-400 hover:text-slate-100">
 						<X
 							className="size-5"
-							onClick={() => setShouldShowOnboarding(true)}
+							onClick={() => {
+								setShouldShowOnboarding(true);
+								setIsRecording(false);
+							}}
 						/>
 					</Dialog.Close>
 					<form className="flex-col flex-1 flex">
