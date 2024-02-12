@@ -18,7 +18,6 @@
 		"sonner": "^1.4.0"
 	},
 	"devDependencies": {
-		"@babel/preset-react": "^7.23.3",
 		"@types/dom-speech-recognition": "^0.0.4",
 		"@types/react": "^18.2.43",
 		"@types/react-dom": "^18.2.17",
