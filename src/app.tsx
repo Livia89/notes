@@ -1,6 +1,6 @@
-import {ChangeEvent, useState} from 'react';
-import {NewNoteCard} from './components/new-note-card';
-import {NoteCard} from './components/note-cards';
+import { ChangeEvent, useState } from 'react';
+import { NewNoteCard } from './components/new-note-card';
+import { NoteCard } from './components/note-cards';
 
 interface Note {
 	id: string;
