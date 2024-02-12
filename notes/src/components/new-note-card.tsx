@@ -1,7 +1,7 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import {X} from 'lucide-react';
-import {ChangeEvent, FormEvent, useState} from 'react';
-import {toast} from 'sonner';
+import { X } from 'lucide-react';
+import { ChangeEvent, FormEvent, useState } from 'react';
+import { toast } from 'sonner';
 
 let speechRecognition: SpeechRecognition | null = null;
 
@@ -9,7 +9,7 @@ interface NewNoteCardProps {
 	onNoteCreated: (content: string) => void;
 }
 
-export function NewNoteCard({onNoteCreated}: NewNoteCardProps) {
+export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 	const [shouldShowOnboarding, setShouldShowOnboarding] =
 		useState<Boolean>(true);
 	const [content, setContent] = useState<string>('');
@@ -56,7 +56,7 @@ export function NewNoteCard({onNoteCreated}: NewNoteCardProps) {
 		speechRecognition.onresult = event => {
 			const transcription = Array.from(event.results).reduce((text, result) => {
 				return text.concat(result[0].transcript);
-			}, ''); // o txt é a '', o primeiro valor e o rst é o valor iterado
+			}, ''); // o text é a '' no inicio do loop. O result é o valor iterado que concatena em text
 			setContent(transcription);
 		};
 		speechRecognition.onerror = event => {
